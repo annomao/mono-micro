@@ -28,7 +28,7 @@ jobs:
             docker build -t udagram-frontend ./udagram-frontend
             docker tag udagram-frontend annomao/udagram-frontend:v3
             docker build -t reverseproxy ./udagram-reverseproxy
-            docker tag reverseproxy annomao/reverseproxy:v2
+            docker tag reverseproxy annomao/reverseproxy:v3
             echo "-------- All images succesfully built----------"
             echo " ------- login in to hub--------"
             docker login -u annomao -p $DOCKER_PASSWORD
@@ -36,7 +36,7 @@ jobs:
             docker push annomao/udagram-api-feed:v2
             docker push annomao/udagram-api-user:v2
             docker push annomao/udagram-frontend:v3
-            docker push annomao/reverseproxy:v2
+            docker push annomao/reverseproxy:v3
 workflows:
   default:
     jobs:
